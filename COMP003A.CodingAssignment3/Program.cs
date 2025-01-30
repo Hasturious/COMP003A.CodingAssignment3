@@ -9,10 +9,29 @@ namespace COMP003A.CodingAssignment3
     {
         static void Main(string[] args)
         {
+            //LOOK AT PNG FROM CRUZ
             Console.Write("Enter your monthly income: ");
             int income = int.Parse(Console.ReadLine());
 
             Console.Write("\n1. Add an Expense\n2. View Expenses and Budget\n3. Remove an Expence\nExit\n");
+            string menuResponse = Console.ReadLine();
+            
+            switch (menuResponse)
+            {
+                case "1":
+                    Console.Write("Enter the expense name");
+                    string expenseName = Console.ReadLine();
+                    Console.Write("Enter the expense amount");
+                    int expensePrice = int.Parse(Console.ReadLine());
+                    break;
+                case "2":
+                    Console.WriteLine($"Expenses:\n- {expenseName} + {expensePrice}.00\nTotal Expenses: {expensePrice}.00\nRemaining Budget {income - expensePrice}");
+                    break;
+                case "3":
+                    Console.Write("Remove Expense: ");
+                    break;
+            }
+
 
 
             //in class lecture
