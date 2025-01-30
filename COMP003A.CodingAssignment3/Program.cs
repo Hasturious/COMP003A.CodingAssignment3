@@ -9,7 +9,64 @@ namespace COMP003A.CodingAssignment3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            /*
+            int wholeNumber;
+            Console.Write("Enter any whole number: ");
+            wholeNumber = int.Parse(Console.ReadLine());
+
+            if (wholeNumber == 0)
+                {
+                Console.WriteLine("Zero");
+                }
+            else if (wholeNumber < 0)
+            {
+                Console.WriteLine("I dont do negative numbers");
+            }
+            else if (wholeNumber % 2 == 0)
+                {
+                Console.WriteLine("Even");
+                }
+            else
+                {
+                Console.WriteLine("Your number is odd");
+                }
+            */
+            /*
+            Console.Write("1-7: ");
+            string weekDay = (Console.ReadLine());
+
+            switch (weekDay.ToLower())
+            {
+                case "1":
+                    Console.WriteLine("Monday");
+                    break;
+                case "2":
+                    Console.WriteLine("Tuesday");
+                    break;
+                case "3":
+                    Console.WriteLine("Wednesday");
+                    break;
+                case "4":
+                    Console.WriteLine("Thursday");
+                    break;
+                case "5":
+                    Console.WriteLine("Friday");
+                    break;
+                case "6":
+                    //Console.WriteLine("Saturday");
+                    break;
+                case "7":
+                    Console.WriteLine("Its the weekend");
+                    break;
+                case "0":
+                    Console.WriteLine("Invalid Input")
+                        break;
+            */
+            //for (initialization; condition; iteration)
+            //{
+            //Code to execute
+            //}
+            }
         }
     }
 }
