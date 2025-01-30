@@ -66,7 +66,28 @@ namespace COMP003A.CodingAssignment3
             //{
             //Code to execute
             //}
+            
+            /*
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i);
             }
+            Console.WriteLine("\n\n");
+            
+            for (int i = 9; i > 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+
+            string output = ("#");
+            for (int i = 0;i < 10; i++)
+            {
+                Console.WriteLine(output);
+                output += "#"; //We repeat whats inside the bracket each loop. Each loop we add an additonal # to the output. output = # on first iteration. output = ### on third
+            }
+            */
+
+
         }
     }
 }
