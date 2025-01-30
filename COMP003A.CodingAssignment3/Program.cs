@@ -9,6 +9,14 @@ namespace COMP003A.CodingAssignment3
     {
         static void Main(string[] args)
         {
+            Console.Write("Enter your monthly income: ");
+            int income = int.Parse(Console.ReadLine());
+
+            Console.Write("\n1. Add an Expense\n2. View Expenses and Budget\n3. Remove an Expence\nExit\n");
+
+
+            //in class lecture
+
             /*
             int wholeNumber;
             Console.Write("Enter any whole number: ");
@@ -86,8 +94,6 @@ namespace COMP003A.CodingAssignment3
                 output += "#"; //We repeat whats inside the bracket each loop. Each loop we add an additonal # to the output. output = # on first iteration. output = ### on third
             }
             */
-
-
         }
     }
 }
