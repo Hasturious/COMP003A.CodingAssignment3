@@ -12,11 +12,40 @@ namespace COMP003A.CodingAssignment3
             //LOOK AT PNG FROM CRUZ
             Console.Write("Enter your monthly income: ");
             int income = int.Parse(Console.ReadLine());
+            int choice;
+            string expenseName = "";
+            int expensePrice = 0;
 
-            Console.Write("\n1. Add an Expense\n2. View Expenses and Budget\n3. Remove an Expence\nExit\n");
-            string menuResponse = Console.ReadLine();
+            do
+            {
+                Console.Write("\n1. Add an Expense\n2. View Expenses and Budget\n3. Remove an Expence\n4. Exit\nEnter your choice: ");
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.Write("Enter the expense name: "); 
+                        expenseName = Console.ReadLine();
+                        Console.Write("Enter the expense amount: ");
+                        expensePrice = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Expense Added Sucessfully");
+                        break;
+                        
+                    case 2:
+                        Console.WriteLine($"Expenses:\n- {expenseName}: {expensePrice}.00\nTotal Expenses: {expensePrice}.00\nRemaining Budget {income - expensePrice}.00");
+                       break;
+                        
+                    case 3:
+                        Console.Write("Remove Expense: ");
+                        break;
+                }
+            } while (choice != 4);
             
-            switch (menuResponse)
+
+            
+            //string menuResponse = Console.ReadLine();
+            
+            /*switch (menuResponse)
             {
                 case "1":
                     Console.Write("Enter the expense name");
@@ -30,7 +59,7 @@ namespace COMP003A.CodingAssignment3
                 case "3":
                     Console.Write("Remove Expense: ");
                     break;
-            }
+            }*/
 
 
 
