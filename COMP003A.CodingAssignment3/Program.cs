@@ -13,8 +13,15 @@ namespace COMP003A.CodingAssignment3
             Console.Write("Enter your monthly income: ");
             int income = int.Parse(Console.ReadLine());
             int choice;
-            string expenseName = "";
-            int expensePrice = 0;
+
+            string expenseName1 = "", expenseName2 = "", expenseName3 = "", expenseName4 = "", expenseName5 = "";
+            int expensePrice1 = 0, expensePrice2 = 0, expensePrice3 = 0, expensePrice4 = 0, expensePrice5 = 0;
+
+            /*
+            I dont know how C# arrays work. My plan was to have a Name and Price array that could be called for hypothetical an infinite amount of expenses
+            string[] expenseName = new string [5];
+            int[] expensePrice = new int[5];
+            */
 
             do
             {
@@ -24,25 +31,60 @@ namespace COMP003A.CodingAssignment3
                 switch (choice)
                 {
                     case 1:
-                        Console.Write("Enter the expense name: "); 
-                        expenseName = Console.ReadLine();
-                        Console.Write("Enter the expense amount: ");
-                        expensePrice = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Expense Added Sucessfully");
+                        Console.Write("Enter the expense name: ");
+                        if (expenseName1 == "")
+                        {
+                            expenseName1 = Console.ReadLine();
+                            Console.Write($"Enter the cost for {expenseName1}: ");
+                            expensePrice1 = int.Parse(Console.ReadLine());
+                        }
+                        else if (expenseName2 == "")
+                        {
+                            expenseName2 = Console.ReadLine();
+                            Console.Write("Enter the cost for " + expenseName2 + ": ");
+                            expensePrice2 = int.Parse(Console.ReadLine());
+                        }
+                        else if (expenseName3 == "")
+                        {
+                            expenseName3 = Console.ReadLine();
+                            Console.Write("Enter the cost for " + expenseName3 + ": ");
+                            expensePrice3 = int.Parse(Console.ReadLine());
+                        }
+                        else if (expenseName4 == "")
+                        {
+                            expenseName4 = Console.ReadLine();
+                            Console.Write("Enter the cost for " + expenseName4 + ": ");
+                            expensePrice4 = int.Parse(Console.ReadLine());
+                        }
+                        else if (expenseName5 == "")
+                        {
+                            expenseName5 = Console.ReadLine();
+                            Console.Write("Enter the cost for " + expenseName5 + ": ");
+                            expensePrice5 = int.Parse(Console.ReadLine());
+                        }
+                        else
+                        {
+                            Console.WriteLine("You have reached the maximum number of expenses.");
+                        }
                         break;
                         
                     case 2:
-                        Console.WriteLine($"Expenses:\n- {expenseName}: {expensePrice}.00\nTotal Expenses: {expensePrice}.00\nRemaining Budget {income - expensePrice}.00");
-                       break;
-                        
+                        Console.WriteLine("\nExpense Summary:");
+                        if (expenseName1 != "") Console.WriteLine($"{expenseName1}: ${expensePrice1}");
+                        if (expenseName2 != "") Console.WriteLine($"{expenseName2}: ${expensePrice2}");
+                        if (expenseName3 != "") Console.WriteLine($"{expenseName3}: ${expensePrice3}");
+                        if (expenseName4 != "") Console.WriteLine($"{expenseName4}: ${expensePrice4}");
+                        if (expenseName5 != "") Console.WriteLine($"{expenseName5}: ${expensePrice5}");
+                        break;
+
                     case 3:
                         Console.Write("Remove Expense: ");
                         break;
                 }
             } while (choice != 4);
-            
 
-            
+            Console.WriteLine("Goodbye!");
+
             //string menuResponse = Console.ReadLine();
             
             /*switch (menuResponse)
