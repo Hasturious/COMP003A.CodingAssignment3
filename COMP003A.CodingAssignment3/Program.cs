@@ -41,25 +41,25 @@ namespace COMP003A.CodingAssignment3
                         else if (expenseName2 == "")
                         {
                             expenseName2 = Console.ReadLine();
-                            Console.Write("Enter the cost for " + expenseName2 + ": ");
+                            Console.Write($"Enter the cost for {expenseName2}: ");
                             expensePrice2 = int.Parse(Console.ReadLine());
                         }
                         else if (expenseName3 == "")
                         {
                             expenseName3 = Console.ReadLine();
-                            Console.Write("Enter the cost for " + expenseName3 + ": ");
+                            Console.Write($"Enter the cost for {expenseName3}: ");
                             expensePrice3 = int.Parse(Console.ReadLine());
                         }
                         else if (expenseName4 == "")
                         {
                             expenseName4 = Console.ReadLine();
-                            Console.Write("Enter the cost for " + expenseName4 + ": ");
+                            Console.Write($"Enter the cost for {expenseName4}: ");
                             expensePrice4 = int.Parse(Console.ReadLine());
                         }
                         else if (expenseName5 == "")
                         {
                             expenseName5 = Console.ReadLine();
-                            Console.Write("Enter the cost for " + expenseName5 + ": ");
+                            Console.Write($"Enter the cost for {expenseName5}: ");
                             expensePrice5 = int.Parse(Console.ReadLine());
                         }
                         else
@@ -67,19 +67,51 @@ namespace COMP003A.CodingAssignment3
                             Console.WriteLine("You have reached the maximum number of expenses.");
                         }
                         break;
-                        
-                    case 2:
-                        Console.WriteLine("\nExpense Summary:");
-                        if (expenseName1 != "") Console.WriteLine($"{expenseName1}: ${expensePrice1}");
-                        if (expenseName2 != "") Console.WriteLine($"{expenseName2}: ${expensePrice2}");
-                        if (expenseName3 != "") Console.WriteLine($"{expenseName3}: ${expensePrice3}");
-                        if (expenseName4 != "") Console.WriteLine($"{expenseName4}: ${expensePrice4}");
-                        if (expenseName5 != "") Console.WriteLine($"{expenseName5}: ${expensePrice5}");
-                        break;
 
-                    case 3:
-                        Console.Write("Remove Expense: ");
+                    case 2:
+                        int totalExpense = expensePrice1 + expensePrice2 + expensePrice3 + expensePrice4 + expensePrice5;
+                        Console.WriteLine("\nExpenses:");
+                        if (expenseName1 != "") Console.WriteLine($"- {expenseName1}: ${expensePrice1}");
+                        if (expenseName2 != "") Console.WriteLine($"- {expenseName2}: ${expensePrice2}");
+                        if (expenseName3 != "") Console.WriteLine($"- {expenseName3}: ${expensePrice3}");
+                        if (expenseName4 != "") Console.WriteLine($"- {expenseName4}: ${expensePrice4}");
+                        if (expenseName5 != "") Console.WriteLine($"- {expenseName5}: ${expensePrice5}");
+
+                        Console.WriteLine($"Total Expenses: {totalExpense}");
+                        Console.WriteLine($"Remaining Budget: {income - totalExpense}");
                         break;
+                    
+                    case 3:
+                        string removedExpense = "";
+                        Console.Write("Remove Expense: ");
+                        removedExpense = Console.ReadLine();
+                        if (removedExpense == expenseName1)
+                        {
+                            expenseName1 = "";
+                            expensePrice1 = 0;
+                        }
+                        else if (removedExpense == expenseName2)
+                        {
+                            expenseName2 = "";
+                            expensePrice2 = 0;
+                        }
+                        else if (removedExpense == expenseName3)
+                        {
+                            expenseName3 = "";
+                            expensePrice3 = 0;
+                        }
+                        else if (removedExpense == expenseName4)
+                        {
+                            expenseName4 = "";
+                            expensePrice4 = 0;
+                        }
+                        else
+                        {
+                            expenseName5 = "";
+                            expensePrice5 = 0;
+                        }
+                        break;
+                    
                 }
             } while (choice != 4);
 
