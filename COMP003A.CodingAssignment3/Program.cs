@@ -14,6 +14,7 @@ namespace COMP003A.CodingAssignment3
             int income = int.Parse(Console.ReadLine());
             int choice;
 
+            //Declare our 5 different possible expenses and their cost
             string expenseName1 = "", expenseName2 = "", expenseName3 = "", expenseName4 = "", expenseName5 = "";
             int expensePrice1 = 0, expensePrice2 = 0, expensePrice3 = 0, expensePrice4 = 0, expensePrice5 = 0;
 
@@ -25,6 +26,7 @@ namespace COMP003A.CodingAssignment3
 
             do
             {
+                //print the list of options to the user and lets them choose between 4 int options (Johnathan's Idea)
                 Console.Write("\n1. Add an Expense\n2. View Expenses and Budget\n3. Remove an Expence\n4. Exit\nEnter your choice: ");
                 choice = int.Parse(Console.ReadLine());
 
@@ -32,6 +34,10 @@ namespace COMP003A.CodingAssignment3
                 {
                     case 1:
                         Console.Write("Enter the expense name: ");
+                        //If the expense is blank we can overide it. The different varibles are combed 1 - 5 and are never shifted
+                        //Basiclly imagine a rack with 5 shelves. First we try to put something on the bottom rack.
+                        //if the bottom rack is full then we try the next, and the next. if we run out of shelves we cant store anything
+                        //If a gap between say shelf 3 and shelf 5 is present, as we comb upwards we can fit our object into shelf 4
                         if (expenseName1 == "")
                         {
                             expenseName1 = Console.ReadLine();
@@ -69,22 +75,28 @@ namespace COMP003A.CodingAssignment3
                         break;
 
                     case 2:
+                        //Add up all the prices we collected in case 1 and make them into an easier to digest variable
                         int totalExpense = expensePrice1 + expensePrice2 + expensePrice3 + expensePrice4 + expensePrice5;
                         Console.WriteLine("\nExpenses:");
+                        //If our expenseNames ARE NOT blank then we can log it in the list of expenses with its name and price
                         if (expenseName1 != "") Console.WriteLine($"- {expenseName1}: ${expensePrice1}");
                         if (expenseName2 != "") Console.WriteLine($"- {expenseName2}: ${expensePrice2}");
                         if (expenseName3 != "") Console.WriteLine($"- {expenseName3}: ${expensePrice3}");
                         if (expenseName4 != "") Console.WriteLine($"- {expenseName4}: ${expensePrice4}");
                         if (expenseName5 != "") Console.WriteLine($"- {expenseName5}: ${expensePrice5}");
-
-                        Console.WriteLine($"Total Expenses: {totalExpense}");
-                        Console.WriteLine($"Remaining Budget: {income - totalExpense}");
+                        //Then we grab the total expense variable from earlier
+                        Console.WriteLine($"Total Expenses: {totalExpense}.00");
+                        //And subtract it from our budget
+                        Console.WriteLine($"Remaining Budget: {income - totalExpense}.00");
                         break;
-                    
+
                     case 3:
+                        //First we declare that the removedExpense is string
                         string removedExpense = "";
                         Console.Write("Remove Expense: ");
                         removedExpense = Console.ReadLine();
+                        //Then if the removed expense lines up with any of our expenses we strike the name and price from the record
+                        //ofcourse if the expense does not exist the else statement should catch it
                         if (removedExpense == expenseName1)
                         {
                             expenseName1 = "";
@@ -105,10 +117,14 @@ namespace COMP003A.CodingAssignment3
                             expenseName4 = "";
                             expensePrice4 = 0;
                         }
-                        else
+                        else if (removedExpense == expenseName5)
                         {
                             expenseName5 = "";
                             expensePrice5 = 0;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Not an expense");
                         }
                         break;
                     
@@ -116,6 +132,7 @@ namespace COMP003A.CodingAssignment3
             } while (choice != 4);
 
             Console.WriteLine("Goodbye!");
+            Console.ReadKey(); //On any keystroke the terminal closes
 
             //string menuResponse = Console.ReadLine();
             
